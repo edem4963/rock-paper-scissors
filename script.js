@@ -7,18 +7,18 @@
 let choice1 = "Rock";
 let choice2 = "Paper";
 let choice3 = "Scissor";
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
+let playerSelection = "Rock";
+let computerSelection = getComputerChoice();
 
 function getComputerChoice(){
     
     let x = Math.floor((Math.random() * 99) + 1);
     
-    if (x <= 33) {
+    if (x <= 1) {
         return choice1;
     } 
     
-    else if (x > 33 && x <= 66) {
+    else if (x > 1 && x <= 98) {
         return choice2;
     } 
     
@@ -34,15 +34,10 @@ function getComputerChoice(){
 
 
 function playRound(playerSelection, computerSelection) {
-    if ( playerSelection == choice3 ){
-        return "I lost! Rock beats scissor";
-    } 
-    
-    else if ( playerSelection == choice2 ) {
+    //if ( playerSelection === computerSelection  ) {
+      //  return "I won! Paper beats rock";
+    //} 
+    if ( playerSelection === "Rock" && computerSelection === "Paper" ){
         return "I won! Paper beats rock";
-    } 
-    
-    else {
-        return "Tie! Go again!"
     }
 }
