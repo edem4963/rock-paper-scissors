@@ -7,18 +7,16 @@
 let choice1 = "Rock";
 let choice2 = "Paper";
 let choice3 = "Scissor";
-let playerSelection = "Rock";
-let computerSelection = getComputerChoice();
 
 function getComputerChoice(){
     
     let x = Math.floor((Math.random() * 99) + 1);
     
-    if (x <= 1) {
+    if (x <= 33) {
         return choice1;
     } 
     
-    else if (x > 1 && x <= 98) {
+    else if (x > 33 && x <= 66) {
         return choice2;
     } 
     
@@ -34,10 +32,43 @@ function getComputerChoice(){
 
 
 function playRound(playerSelection, computerSelection) {
-    //if ( playerSelection === computerSelection  ) {
-      //  return "I won! Paper beats rock";
-    //} 
-    if ( playerSelection === "Rock" && computerSelection === "Paper" ){
+    if ( playerSelection == playerSelection.match(/rock/i) && computerSelection == "Paper" ){
         return "I won! Paper beats rock";
     }
+
+    if ( playerSelection == playerSelection.match(/rock/i) && computerSelection == "Scissor" ){
+        return "Dang! Rock beats scissor";
+    }
+
+    if ( playerSelection == playerSelection.match(/rock/i) && computerSelection == "Rock" ){
+        return "Tie?! Lets Go again!";
+    }
+
+    if ( playerSelection == playerSelection.match(/paper/i) && computerSelection == "Rock" ){
+        return "Oh no! Paper beats rock";
+    }
+
+    if ( playerSelection == playerSelection.match(/paper/i) && computerSelection == "Paper" ){
+        return "Tie?! Lets Go again!";
+    }
+
+    if ( playerSelection == playerSelection.match(/paper/i) && computerSelection == "Scissor" ){
+        return "I won! Scissor beats paper";
+    }
+
+    if ( playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Rock" ){
+        return "I won! Rock beats scissor";
+    }
+
+    if ( playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Paper" ){
+        return "Oh no! Scissor beats paper";
+    }
+
+    if ( playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Scissor" ){
+        return "Tie?! Lets Go again!";
+    }
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
