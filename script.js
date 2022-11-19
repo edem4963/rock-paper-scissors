@@ -10,13 +10,13 @@ let choice3 = "Scissor";
 
 function getComputerChoice(){
     
-    let x = Math.floor((Math.random() * 99) + 1);
+    let x = Math.floor((Math.random() * 3) + 1);
     
-    if (x <= 33) {
+    if (x == 1) {
         return choice1;
     } 
     
-    else if (x > 33 && x <= 66) {
+    else if (x == 2) {
         return choice2;
     } 
     
@@ -32,6 +32,9 @@ function getComputerChoice(){
 
 
 function playRound(playerSelection, computerSelection) {
+
+    
+
     if ( playerSelection == playerSelection.match(/rock/i) && computerSelection == "Paper" ){
         return "I won! Paper beats rock";
     }
@@ -72,3 +75,9 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+
+function game(){
+    for ( let i = 0; i < 5 ; i++ ) {
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
