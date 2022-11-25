@@ -72,41 +72,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = prompt("Please enter rock, paper or scissor: ");
-const computerSelection = getComputerChoice();
+//const playerSelection = prompt("Please enter rock, paper or scissor: ");
+//const computerSelection = getComputerChoice();
 //console.log(playRound(playerSelection, computerSelection));
-function result(playerSelection, computerSelection) {
 
-    //let playerScore = 0;
-    //let computerScore = 0;
-    //let playerPoints = playerScore ++;
-    //let computerPoints = computerScore ++;
-
-
-    // If statement for when player wins games
-    if ((playerSelection == playerSelection.match(/rock/i) && computerSelection == "Scissor")
-    ||(playerSelection == playerSelection.match(/paper/i) && computerSelection == "Rock")
-    ||(playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Paper")){
-            
-      //  console.log("Player points: " + playerPoints);
-    }
-    //if statement if statement for when compter wins game
-    else if ((playerSelection == playerSelection.match(/rock/i) && computerSelection == "Paper" )
-    ||(playerSelection == playerSelection.match(/paper/i) && computerSelection == "Scissor")
-    ||(playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Rock")){
-            
-        //console.log("Computer points: " + computerPoints ) ;
-    }
-    // if statement for tied game
-    //else if ((playerSelection.match(/paper|rock|scissor/i)) == computerSelection ){
-    
-    //}
-}
+let playerPoints = 0;
+let computerPoints = 0;
 
 function game(){
     for ( let i = 0; i < 4 ; i++ ) {
-        //const playerSelection = prompt("Please enter rock, paper or scissor: ");
-        //const computerSelection = getComputerChoice();
+        const playerSelection = prompt("Please enter rock, paper or scissor: ");
+        const computerSelection = getComputerChoice();
+        //let playerPoints = 0;
+        //let computerPoints = 0;
   
          
     // If statement for when player wins games
@@ -114,14 +92,16 @@ function game(){
     ||(playerSelection == playerSelection.match(/paper/i) && computerSelection == "Rock")
     ||(playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Paper")){
             
-        console.log("Player points: " );
+        console.log("Player points: +1" );
+        playerPoints += 1;
     }
     //if statement if statement for when compter wins game
         else if ((playerSelection == playerSelection.match(/rock/i) && computerSelection == "Paper" )
     ||(playerSelection == playerSelection.match(/paper/i) && computerSelection == "Scissor")
     ||(playerSelection == playerSelection.match(/scissor/i) && computerSelection == "Rock")){
             
-        console.log("Computer points: "  ) ;
+        console.log("Computer points: +1 "  ) ;
+        computerPoints += 1;
     }
     // if statement for tied game
         else if ((playerSelection.match(/paper|rock|scissor/i)) == computerSelection ){
@@ -131,4 +111,12 @@ function game(){
     
     console.log(playRound(playerSelection, computerSelection));
     }
+    
+    let playerScore = playerPoints;
+    let computerScore = computerPoints;
+
+    console.log("Player score: " + playerScore);
+    console.log("Computer score: " + computerScore)
 }
+
+
