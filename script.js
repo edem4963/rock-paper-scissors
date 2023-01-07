@@ -81,10 +81,10 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissor = document.querySelector('#scissor');
 //button event listener to play rounds
-rock.addEventListener('click', () =>{
+/* rock.addEventListener('click', () =>{
     playerSelection = rock.value = "rock";
     console.log(playRound(playerSelection, computerSelection));
-})
+}) */
 paper.addEventListener('click', () =>{
     playerSelection = paper.value = "paper";
     console.log(playRound(playerSelection, computerSelection));
@@ -98,8 +98,8 @@ let playerPoints = 0;
 let computerPoints = 0;
 
 function game(){
-    /*for ( let i = 0; i < 4 ; i++ ) {
-        const playerSelection = prompt("Please enter rock, paper or scissor: ");
+    for ( let i = 0; i < 1 ; i++ ) {
+        //const playerSelection = '';
         const computerSelection = getComputerChoice();
         //let playerPoints = 0;
         //let computerPoints = 0;
@@ -132,10 +132,14 @@ function game(){
     
     let playerScore = playerPoints;
     let computerScore = computerPoints;
-    */
+    
 
     console.log("Player score: " + playerScore);
     console.log("Computer score: " + computerScore)
 }
-
+// test game function into event listener
+rock.addEventListener('click', () =>{
+    playerSelection = rock.value = "rock";
+    game();
+})
 
