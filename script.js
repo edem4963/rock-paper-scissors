@@ -85,14 +85,14 @@ const scissor = document.querySelector('#scissor');
     playerSelection = rock.value = "rock";
     console.log(playRound(playerSelection, computerSelection));
 }) */
-paper.addEventListener('click', () =>{
+/* paper.addEventListener('click', () =>{
     playerSelection = paper.value = "paper";
     console.log(playRound(playerSelection, computerSelection));
 })
 scissor.addEventListener('click', () =>{
     playerSelection = scissor.value = "scissor";
     console.log(playRound(playerSelection, computerSelection));
-})
+}) */
 
 let playerPoints = 0;
 let computerPoints = 0;
@@ -143,3 +143,12 @@ rock.addEventListener('click', () =>{
     game();
 })
 
+paper.addEventListener('click', () =>{
+    playerSelection = paper.value = "paper";
+    game();
+})
+
+scissor.addEventListener('click', () =>{
+    playerSelection = scissor.value = "scissor";
+    game();
+})
